@@ -83,7 +83,7 @@ with st.sidebar:
 # ==========================================
 # 4. HALAMAN UTAMA (DASHBOARD)
 # ==========================================
-st.title("🏪 Warung Adi Dashboard")
+st.title("🏪 Toko Adi Dashboard")
 st.markdown("Sistem Peramalan Keuntungan Berbasis Artificial Intelligence")
 
 # Cek apakah model ada
@@ -184,4 +184,5 @@ else:
             'Keuntungan': [100, 120, 110, 130]
         })
         st.markdown("### Contoh Data Historis (Demo)")
+
         st.area_chart(dummy_df.set_index('Minggu'))
