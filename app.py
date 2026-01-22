@@ -9,7 +9,7 @@ import plotly.express as px
 # 1. KONFIGURASI HALAMAN (DESAIN)
 # ==========================================
 st.set_page_config(
-    page_title="Warung Adi Intelligence",
+    page_title="Toko Adi Intelligence",
     page_icon="🏪",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -52,8 +52,8 @@ st.markdown("""
 @st.cache_resource
 def load_assets():
     try:
-        model = joblib.load('Data_Penjualan_Warung_Adi.joblib')
-        scaler = joblib.load('Data_Penjualan_Warung_Adi_scaler.joblib')
+        model = joblib.load('Data_Penjualan_Toko_Adi.joblib')
+        scaler = joblib.load('Data_Penjualan_Toko_Adi_scaler.joblib')
         return model, scaler
     except FileNotFoundError:
         return None, None
@@ -66,7 +66,7 @@ model, scaler = load_assets()
 with st.sidebar:
     st.image("https://cdn-icons-png.flaticon.com/512/263/263142.png", width=100)
     st.title("Parameter Prediksi")
-    st.markdown("Masukkan data historis warung untuk memprediksi keuntungan minggu depan.")
+    st.markdown("Masukkan data historis Toko untuk memprediksi keuntungan minggu depan.")
     st.markdown("---")
 
     # Input User (Sesuai Fitur Training)
@@ -84,7 +84,7 @@ with st.sidebar:
 # 4. HALAMAN UTAMA (DASHBOARD)
 # ==========================================
 st.title("🏪 Toko Adi Dashboard")
-st.markdown("Sistem Peramalan Keuntungan Berbasis Artificial Intelligence")
+st.markdown("Sistem Profit Keuntungan Berbasis Artificial Intelligence")
 
 # Cek apakah model ada
 if model is None:
@@ -186,3 +186,4 @@ else:
         st.markdown("### Contoh Data Historis (Demo)")
 
         st.area_chart(dummy_df.set_index('Minggu'))
+
