@@ -52,8 +52,8 @@ st.markdown("""
 @st.cache_resource
 def load_assets():
     try:
-        model = joblib.load('Data_Penjualan_warung_Adi.joblib')
-        scaler = joblib.load('Data_Penjualan_warung_Adi_scaler.joblib')
+        model = joblib.load('Data_Penjualan_Warung_Adi.joblib')
+        scaler = joblib.load('Data_Penjualan_Warung_Adi_scaler.joblib')
         return model, scaler
     except FileNotFoundError:
         return None, None
@@ -186,5 +186,6 @@ else:
         st.markdown("### Contoh Data Historis (Demo)")
 
         st.area_chart(dummy_df.set_index('Minggu'))
+
 
 
